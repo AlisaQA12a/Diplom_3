@@ -1,6 +1,5 @@
 import allure
 
-from locators.locators import MainPageLocators
 from pages.main_page import MainPage
 from url import Urls
 
@@ -52,4 +51,4 @@ class TestCheckMainPage:
         main_page = MainPage(driver)
         main_page.drag_and_drop_bun()
         main_page.find_and_click_order_button()
-        assert main_page.get_text_of_element(MainPageLocators.POPUP_ORDER_STATUS) == "Ваш заказ начали готовить"
+        assert main_page.get_popup_successful_order_text() == "Ваш заказ начали готовить"

@@ -49,7 +49,7 @@ def user_auth_data():
 @pytest.fixture(scope="session")
 def user_data(user_auth_data):
     data, _ = user_auth_data
-    yield data
+    return data
 
 
 @allure.step("Аутентификация под пользователем")
@@ -60,4 +60,4 @@ def login(driver, user_data):
     personal_account_page = PersonalAccountPage(driver)
     personal_account_page.login(user_data)
     main_page.main_page_loading_wait()
-    yield user_data
+    return user_data

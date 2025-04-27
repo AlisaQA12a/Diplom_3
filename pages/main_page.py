@@ -105,3 +105,7 @@ class MainPage(BasePage):
         self.order_popup_is_invisible()
         self.wait_until_backdrop_hide()
         return order_number
+
+    def get_popup_successful_order_text(self):
+        return self.get_text_of_element(MainPageLocators.POPUP_ORDER_STATUS)
+
